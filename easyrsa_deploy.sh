@@ -9,6 +9,8 @@ ln -s /usr/share/easy-rsa/* ~/easy-rsa/
 chmod 700 ~/easy-rsa/
 ~/easy-rsa/easyrsa init-pki
 echo $?
+cp -r /home/$USER/easyrsadeploy/pki/ /home/alex/
+
 cp ~/easy-rsa/vars.example ~/easy-rsa/vars
 echo $?
 #Because sed can't change only symbols in strings,i decided to add set_var in the end of file.
