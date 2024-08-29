@@ -1,12 +1,13 @@
 #!/bin/bash
 
+cd ~
 sudo apt-get -y update && sudo apt-get -y upgrade
 sudo apt-get -y install easy-rsa
 echo $?
 
 mkdir -p ~/easy-rsa
 ln -s /usr/share/easy-rsa/* ~/easy-rsa/
-chmod 700 ~/easy-rsa/
+#chmod 700 ~/easy-rsa/
 ~/easy-rsa/easyrsa init-pki
 echo $?
 cp -r /home/$USER/easyrsadeploy-/pki/ /home/alex/
