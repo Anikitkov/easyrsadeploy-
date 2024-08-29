@@ -9,7 +9,7 @@ ln -s /usr/share/easy-rsa/* ~/easy-rsa/
 chmod 700 ~/easy-rsa/
 ~/easy-rsa/easyrsa init-pki
 echo $?
-cp -r /home/$USER/easyrsadeploy/pki/ /home/alex/
+cp -r /home/$USER/easyrsadeploy-/pki/ /home/alex/
 
 cp ~/easy-rsa/vars.example ~/easy-rsa/vars
 echo $?
