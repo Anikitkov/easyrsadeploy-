@@ -25,6 +25,7 @@ set_var EASYRSA_REQ_OU         "LLC"
 EOF
 
 ~/easy-rsa/easyrsa build-ca
+cd ~
 echo $?
 
 
