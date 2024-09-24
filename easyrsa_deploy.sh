@@ -25,8 +25,15 @@ set_var EASYRSA_REQ_OU         "LLC"
 EOF
 
 ~/easy-rsa/easyrsa build-ca
-cd ~
+~/easy-rsa/easyrsa gen-req server nopass
+~/easy-rsa/easyrsa sign-req server server
+mkdir -p ~/clients/keys
+~/easy-rsa/easyrsa gen-req client-1 nopass
+sudo cp pki/private/client-1.key ./clients/keys/
+~/easy-rsa/easyrsa sign-req client client-1
+sudo iptables -A INPUT -p tcp -m tcp -m multiport ! --dports 80,443,22 -j DROP
 echo $?
+
 
 
 
