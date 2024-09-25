@@ -1,9 +1,19 @@
 #!/bin/bash
 
+
 cd ~
+
+sudo ufw default deny incoming
+sudo ufw allow 22
+sudo ufw allow 80
+sudo ufw allow 443
+sudo ufw allow 53
+sudo ufw enable
+
 sudo apt-get -y update && sudo apt-get -y upgrade
 sudo apt-get -y install easy-rsa
 echo $?
+if echo $? eq 1 
 
 mkdir -p ~/easy-rsa
 ln -s /usr/share/easy-rsa/* ~/easy-rsa/
@@ -31,7 +41,7 @@ mkdir -p ~/clients/keys
 ~/easy-rsa/easyrsa gen-req client-1 nopass
 sudo cp pki/private/client-1.key ./clients/keys/
 ~/easy-rsa/easyrsa sign-req client client-1
-sudo iptables -A INPUT -p tcp -m tcp -m multiport ! --dports 80,443,22 -j DROP
+#sudo iptables -A INPUT -p tcp -m tcp -m multiport ! --dports 80,443,22 -j DROP
 echo $?
 
 
