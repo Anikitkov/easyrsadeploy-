@@ -53,7 +53,7 @@ set_var EASYRSA_REQ_COUNTRY    "RU"
 set_var EASYRSA_REQ_PROVINCE   "Russia"
 set_var EASYRSA_REQ_CITY       "Moscow"
 set_var EASYRSA_REQ_ORG        "Without company"
-set_var EASYRSA_REQ_EMAIL      "Alekviper@gmail.com"
+set_var EASYRSA_REQ_EMAIL      "client@gmail.com"
 set_var EASYRSA_REQ_OU         "LLC"
 EOF
 
